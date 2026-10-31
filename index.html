@@ -185,8 +185,16 @@
           </div>
         </div>
 
-        <!-- Book Stage (The Pages Container) -->
+        <!-- Book Stage (The Pages Container with Side Flip Arrows) -->
         <div class="book-stage" id="bookStage">
+
+          <!-- Middle Side Flip Buttons -->
+          <button class="book-side-arrow book-side-prev" id="bookSidePrevBtn" onclick="prevBookPage()" aria-label="Flip to Previous Page">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button class="book-side-arrow book-side-next" id="bookSideNextBtn" onclick="nextBookPage()" aria-label="Flip to Next Page">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
 
           <!-- PAGE 0: TABLE OF CONTENTS (INDEX) -->
           <article class="book-page active" data-page-index="0" id="bookPage-0">
@@ -198,7 +206,7 @@
                 </div>
                 <h3 class="toc-title">Table of Contents</h3>
                 <p class="toc-desc">
-                  An architectural monograph cataloging digital BIM modeling, European LOD 200–350 delivery, 2D-to-BIM transformation at Ribhus, structural steel detailing, and analytical engineering platforms.
+                  An architectural monograph cataloging digital BIM modeling, European LOD 200–350 delivery, structural steel detailing, and analytical engineering platforms.
                 </p>
 
                 <div class="toc-signature-box">
@@ -207,8 +215,8 @@
                     <span>BIM Coordination &bull; ArchiCAD &bull; Revit &bull; IFC</span>
                   </div>
                   <div class="toc-sig-row">
-                    <strong>Studio Venture</strong>
-                    <span>Ribhus &mdash; theribhus.com</span>
+                    <strong>Specialization</strong>
+                    <span>QA/QC Model Pre-Checks &bull; LOD 200–350</span>
                   </div>
                   <div class="toc-sig-row">
                     <strong>Academic Base</strong>
@@ -220,9 +228,6 @@
                   <button class="btn-pill-dark" onclick="goToBookPage(1)">
                     <span>Start Reading (Page 01)</span> &rarr;
                   </button>
-                  <a href="https://theribhus.com" target="_blank" rel="noopener" class="btn-pill-light">
-                    <span>Visit theribhus.com</span> &nearr;
-                  </a>
                 </div>
               </div>
 
@@ -240,70 +245,62 @@
                   <li class="toc-item" onclick="goToBookPage(2)">
                     <span class="toc-num">02</span>
                     <div class="toc-entry">
-                      <strong>Ribhus — 2D Plans to 3D BIM Production Studio</strong>
-                      <span> theribhus.com &bull; Scan-to-BIM &bull; LOD 200–350 &bull; BOQ Extractions</span>
+                      <strong>3BHK Residential Planning &amp; BIM Documentation | 32 x 50 ft</strong>
+                      <span>Bylaws Compliance &bull; Sections, Elevations &amp; Daylight Optimization</span>
                     </div>
                     <span class="toc-target-page">p. 03</span>
                   </li>
                   <li class="toc-item" onclick="goToBookPage(3)">
                     <span class="toc-num">03</span>
                     <div class="toc-entry">
-                      <strong>3BHK Residential Planning &amp; BIM Documentation | 32 x 50 ft</strong>
-                      <span>Bylaws Compliance &bull; Sections, Elevations &amp; Daylight Optimization</span>
+                      <strong>4-Floor Residential Building (G+3) | ArchiCAD Multi-Story Modeling</strong>
+                      <span>Vertical Circulation Cores &bull; Service Ducts &bull; Structural Grid Alignment</span>
                     </div>
                     <span class="toc-target-page">p. 04</span>
                   </li>
                   <li class="toc-item" onclick="goToBookPage(4)">
                     <span class="toc-num">04</span>
                     <div class="toc-entry">
-                      <strong>4-Floor Residential Building (G+3) | ArchiCAD Multi-Story Modeling</strong>
-                      <span>Vertical Circulation Cores &bull; Service Ducts &bull; Structural Grid Alignment</span>
-                    </div>
-                    <span class="toc-target-page">p. 05</span>
-                  </li>
-                  <li class="toc-item" onclick="goToBookPage(5)">
-                    <span class="toc-num">05</span>
-                    <div class="toc-entry">
                       <strong>Contemporary Residential House Planning &amp; Architectural Design</strong>
                       <span>ArchiCAD Modeling &bull; Twinmotion Renders &bull; Indoor-Outdoor Living</span>
                     </div>
-                    <span class="toc-target-page">p. 06</span>
+                    <span class="toc-target-page">p. 05</span>
                   </li>
                 </ul>
 
                 <div class="toc-section-label" style="margin-top: 22px;">PART II &bull; STRUCTURAL, DATA &amp; HARDWARE INNOVATION</div>
                 <ul class="toc-list">
-                  <li class="toc-item" onclick="goToBookPage(6)">
-                    <span class="toc-num">06</span>
+                  <li class="toc-item" onclick="goToBookPage(5)">
+                    <span class="toc-num">05</span>
                     <div class="toc-entry">
                       <strong>Truss Bridge Renovation Project | IS 800:2007, AutoCAD</strong>
                       <span>17 Detailed DWG Bolted Connection Sheets &bull; 8-Day Client Turnaround</span>
+                    </div>
+                    <span class="toc-target-page">p. 06</span>
+                  </li>
+                  <li class="toc-item" onclick="goToBookPage(6)">
+                    <span class="toc-num">06</span>
+                    <div class="toc-entry">
+                      <strong>Delhi Traffic Congestion &amp; Signal Optimization Analysis</strong>
+                      <span>SQL Modeling &bull; 5-Page Power BI Dashboard &bull; 2,000+ Observations</span>
                     </div>
                     <span class="toc-target-page">p. 07</span>
                   </li>
                   <li class="toc-item" onclick="goToBookPage(7)">
                     <span class="toc-num">07</span>
                     <div class="toc-entry">
-                      <strong>Delhi Traffic Congestion &amp; Signal Optimization Analysis</strong>
-                      <span>SQL Modeling &bull; 5-Page Power BI Dashboard &bull; 2,000+ Observations</span>
+                      <strong>CadetOS — Military Battalion Operations Data Platform</strong>
+                      <span>Requirements PRD &bull; 150+ Personnel Unit Scheduling &bull; Live Dashboards</span>
                     </div>
                     <span class="toc-target-page">p. 08</span>
                   </li>
                   <li class="toc-item" onclick="goToBookPage(8)">
                     <span class="toc-num">08</span>
                     <div class="toc-entry">
-                      <strong>CadetOS — Military Battalion Operations Data Platform</strong>
-                      <span>Requirements PRD &bull; 150+ Personnel Unit Scheduling &bull; Live Dashboards</span>
-                    </div>
-                    <span class="toc-target-page">p. 09</span>
-                  </li>
-                  <li class="toc-item" onclick="goToBookPage(9)">
-                    <span class="toc-num">09</span>
-                    <div class="toc-entry">
                       <strong>Winner &mdash; Affordable EMG Bionic Arm Innovation (&lt; ₹75,000)</strong>
                       <span>1st Place Delhi Innovation &bull; All-India Finalist Vijayawada</span>
                     </div>
-                    <span class="toc-target-page">p. 10</span>
+                    <span class="toc-target-page">p. 09</span>
                   </li>
                 </ul>
               </div>
@@ -377,75 +374,8 @@
             </div>
           </article>
 
-          <!-- PAGE 2: RIBHUS VENTURE & 2D-TO-BIM STUDIO -->
+          <!-- PAGE 2: 3BHK RESIDENTIAL PLANNING & BIM -->
           <article class="book-page" data-page-index="2" id="bookPage-2">
-            <div class="book-spread">
-              <div class="book-visual-pane">
-                <div class="book-main-img-wrap" onclick="openProjectModal('ribhus')">
-                  <span class="book-tag-overlay">STUDIO VENTURE &bull; theribhus.com</span>
-                  <img src="assets/images/3d_project2.jpg" alt="Ribhus BIM Studio Deliverables" class="book-hero-img" />
-                  <div class="book-zoom-indicator">&nearr; Click to view studio case study</div>
-                </div>
-                <div class="book-thumb-strip">
-                  <img src="assets/images/ribhus_logo.png" alt="Ribhus Studio Logo" onclick="openProjectModal('ribhus')" style="object-fit: contain; background: #fff; padding: 6px;" />
-                  <img src="assets/images/3d_p2_2.jpg" alt="Ribhus Multi-Story CAD" onclick="openProjectModal('ribhus')" />
-                  <img src="assets/images/3d_bim_portfolio.jpg" alt="Ribhus European Scope" onclick="openProjectModal('ribhus')" />
-                </div>
-              </div>
-
-              <div class="book-narrative-pane">
-                <div class="book-chapter-meta">
-                  <span class="book-chapter-badge">Chapter 02 &bull; Digital Practice</span>
-                  <span class="book-running-folio">Folio Page 03</span>
-                </div>
-
-                <h3 class="book-project-title">Ribhus — 2D Plans to 3D BIM Studio &bull; theribhus.com</h3>
-                <p class="book-project-subline">
-                  Co-founded an independent BIM and digital drafting studio converting legacy paper blueprints, survey PDFs, and CAD files into coordinated 3D BIM models at LOD 200–350 for European architectural and energy consulting firms.
-                </p>
-
-                <div class="book-meta-grid">
-                  <div class="book-meta-cell">
-                    <span class="b-meta-label">Domain</span>
-                    <strong class="b-meta-value">theribhus.com</strong>
-                  </div>
-                  <div class="book-meta-cell">
-                    <span class="b-meta-label">Role</span>
-                    <strong class="b-meta-value">Co-Founder &bull; Operations</strong>
-                  </div>
-                  <div class="book-meta-cell">
-                    <span class="b-meta-label">Target Markets</span>
-                    <strong class="b-meta-value">Germany &bull; United Kingdom</strong>
-                  </div>
-                  <div class="book-meta-cell">
-                    <span class="b-meta-label">Turnaround</span>
-                    <strong class="b-meta-value">24–48h Residential SLA</strong>
-                  </div>
-                </div>
-
-                <div class="book-case-bullets">
-                  <h4>Core Engineering Highlights</h4>
-                  <ul>
-                    <li>Structured standard operating procedures for Scan-to-BIM, CAD drafting, and IFC quality assurance checks for international practices.</li>
-                    <li>Developed automated BOQ extraction and component scheduling templates in ArchiCAD and Revit.</li>
-                    <li>Maintains a weekly outreach pipeline of 20–25 architectural and energy consultancy targets across Germany and the UK.</li>
-                  </ul>
-                </div>
-
-                <div class="book-action-row">
-                  <a href="https://theribhus.com" target="_blank" rel="noopener" class="btn-pill-dark">
-                    <span>Visit theribhus.com</span> &nearr;
-                  </a>
-                  <a href="https://www.linkedin.com/company/theribhus/" target="_blank" rel="noopener" class="btn-pill-light">
-                    <span>Ribhus LinkedIn</span> &nearr;
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- PAGE 3: 3BHK RESIDENTIAL PLANNING & BIM -->
-          <article class="book-page" data-page-index="3" id="bookPage-3">
             <div class="book-spread">
               <div class="book-visual-pane">
                 <div class="book-main-img-wrap" onclick="openProjectModal('residential3bhk')">
@@ -462,8 +392,8 @@
 
               <div class="book-narrative-pane">
                 <div class="book-chapter-meta">
-                  <span class="book-chapter-badge">Chapter 03 &bull; Residential BIM</span>
-                  <span class="book-running-folio">Folio Page 04</span>
+                  <span class="book-chapter-badge">Chapter 02 &bull; Residential BIM</span>
+                  <span class="book-running-folio">Folio Page 03</span>
                 </div>
 
                 <h3 class="book-project-title">3BHK Residential Planning &amp; BIM Documentation | 32 x 50 ft</h3>
@@ -511,8 +441,8 @@
             </div>
           </article>
 
-          <!-- PAGE 4: 4-FLOOR RESIDENTIAL BUILDING (G+3) -->
-          <article class="book-page" data-page-index="4" id="bookPage-4">
+          <!-- PAGE 3: 4-FLOOR RESIDENTIAL BUILDING (G+3) -->
+          <article class="book-page" data-page-index="3" id="bookPage-3">
             <div class="book-spread">
               <div class="book-visual-pane">
                 <div class="book-main-img-wrap" onclick="openProjectModal('multistory')">
@@ -529,8 +459,8 @@
 
               <div class="book-narrative-pane">
                 <div class="book-chapter-meta">
-                  <span class="book-chapter-badge">Chapter 04 &bull; Multi-Story BIM</span>
-                  <span class="book-running-folio">Folio Page 05</span>
+                  <span class="book-chapter-badge">Chapter 03 &bull; Multi-Story BIM</span>
+                  <span class="book-running-folio">Folio Page 04</span>
                 </div>
 
                 <h3 class="book-project-title">4-Floor Residential Building (G+3) | ArchiCAD Multi-Story Modeling</h3>
@@ -578,8 +508,8 @@
             </div>
           </article>
 
-          <!-- PAGE 5: CONTEMPORARY RESIDENTIAL HOUSE PLANNING -->
-          <article class="book-page" data-page-index="5" id="bookPage-5">
+          <!-- PAGE 4: CONTEMPORARY RESIDENTIAL HOUSE PLANNING -->
+          <article class="book-page" data-page-index="4" id="bookPage-4">
             <div class="book-spread">
               <div class="book-visual-pane">
                 <div class="book-main-img-wrap" onclick="openProjectModal('houseplan')">
@@ -596,8 +526,8 @@
 
               <div class="book-narrative-pane">
                 <div class="book-chapter-meta">
-                  <span class="book-chapter-badge">Chapter 05 &bull; Architectural Concept</span>
-                  <span class="book-running-folio">Folio Page 06</span>
+                  <span class="book-chapter-badge">Chapter 04 &bull; Architectural Concept</span>
+                  <span class="book-running-folio">Folio Page 05</span>
                 </div>
 
                 <h3 class="book-project-title">Residential House Planning &amp; Architectural Design</h3>
@@ -645,8 +575,8 @@
             </div>
           </article>
 
-          <!-- PAGE 6: TRUSS BRIDGE RENOVATION -->
-          <article class="book-page" data-page-index="6" id="bookPage-6">
+          <!-- PAGE 5: TRUSS BRIDGE RENOVATION -->
+          <article class="book-page" data-page-index="5" id="bookPage-5">
             <div class="book-spread">
               <div class="book-visual-pane">
                 <div class="book-main-img-wrap" onclick="openProjectModal('truss')">
@@ -663,8 +593,8 @@
 
               <div class="book-narrative-pane">
                 <div class="book-chapter-meta">
-                  <span class="book-chapter-badge">Chapter 06 &bull; Structural Steel</span>
-                  <span class="book-running-folio">Folio Page 07</span>
+                  <span class="book-chapter-badge">Chapter 05 &bull; Structural Steel</span>
+                  <span class="book-running-folio">Folio Page 06</span>
                 </div>
 
                 <h3 class="book-project-title">Truss Bridge Renovation Project | IS 800:2007, AutoCAD (Freelance)</h3>
@@ -712,8 +642,8 @@
             </div>
           </article>
 
-          <!-- PAGE 7: DELHI TRAFFIC CONGESTION ANALYSIS -->
-          <article class="book-page" data-page-index="7" id="bookPage-7">
+          <!-- PAGE 6: DELHI TRAFFIC CONGESTION ANALYSIS -->
+          <article class="book-page" data-page-index="6" id="bookPage-6">
             <div class="book-spread">
               <div class="book-visual-pane">
                 <div class="book-main-img-wrap" onclick="openProjectModal('traffic')">
@@ -730,8 +660,8 @@
 
               <div class="book-narrative-pane">
                 <div class="book-chapter-meta">
-                  <span class="book-chapter-badge">Chapter 07 &bull; Urban Analytics</span>
-                  <span class="book-running-folio">Folio Page 08</span>
+                  <span class="book-chapter-badge">Chapter 06 &bull; Urban Analytics</span>
+                  <span class="book-running-folio">Folio Page 07</span>
                 </div>
 
                 <h3 class="book-project-title">Delhi Traffic Congestion &amp; Signal Optimization Analysis | SQL, Power BI</h3>
@@ -779,8 +709,8 @@
             </div>
           </article>
 
-          <!-- PAGE 8: CADETOS OPERATIONS PLATFORM -->
-          <article class="book-page" data-page-index="8" id="bookPage-8">
+          <!-- PAGE 7: CADETOS OPERATIONS PLATFORM -->
+          <article class="book-page" data-page-index="7" id="bookPage-7">
             <div class="book-spread">
               <div class="book-visual-pane">
                 <div class="book-main-img-wrap" onclick="openProjectModal('cadetos')">
@@ -797,8 +727,8 @@
 
               <div class="book-narrative-pane">
                 <div class="book-chapter-meta">
-                  <span class="book-chapter-badge">Chapter 08 &bull; Operations Systems</span>
-                  <span class="book-running-folio">Folio Page 09</span>
+                  <span class="book-chapter-badge">Chapter 07 &bull; Operations Systems</span>
+                  <span class="book-running-folio">Folio Page 08</span>
                 </div>
 
                 <h3 class="book-project-title">CadetOS — Battalion Operations Data Platform | SQL, Power BI</h3>
@@ -846,8 +776,8 @@
             </div>
           </article>
 
-          <!-- PAGE 9: AFFORDABLE EMG BIONIC ARM INNOVATION -->
-          <article class="book-page" data-page-index="9" id="bookPage-9">
+          <!-- PAGE 8: AFFORDABLE EMG BIONIC ARM INNOVATION -->
+          <article class="book-page" data-page-index="8" id="bookPage-8">
             <div class="book-spread">
               <div class="book-visual-pane">
                 <div class="book-main-img-wrap" onclick="openProjectModal('bionic')">
@@ -864,8 +794,8 @@
 
               <div class="book-narrative-pane">
                 <div class="book-chapter-meta">
-                  <span class="book-chapter-badge">Chapter 09 &bull; Hardware Innovation</span>
-                  <span class="book-running-folio">Folio Page 10</span>
+                  <span class="book-chapter-badge">Chapter 08 &bull; Hardware Innovation</span>
+                  <span class="book-running-folio">Folio Page 09</span>
                 </div>
 
                 <h3 class="book-project-title">Winner – Affordable EMG Bionic Arm Innovation (&lt; ₹75,000 Cost)</h3>
@@ -1860,12 +1790,14 @@
 
     /* Monograph Book Controller Implementation */
     let currentBookPage = 0;
-    const totalBookPages = 10; // Page 0: Table of Contents, Pages 1-9: Projects
+    const totalBookPages = 9; // Page 0: Table of Contents, Pages 1-8: Personal Projects
 
     const bookPages = document.querySelectorAll('.book-page');
     const pageIndicator = document.getElementById('bookPageIndicator');
     const bookPrevBtn = document.getElementById('bookPrevBtn');
     const bookNextBtn = document.getElementById('bookNextBtn');
+    const bookSidePrevBtn = document.getElementById('bookSidePrevBtn');
+    const bookSideNextBtn = document.getElementById('bookSideNextBtn');
     const paginationDotsContainer = document.getElementById('bookPaginationDots');
 
     // Build pagination dots dynamically
@@ -1899,9 +1831,14 @@
         }
       }
 
-      // Update Prev / Next Buttons
-      if (bookPrevBtn) bookPrevBtn.disabled = currentBookPage === 0;
-      if (bookNextBtn) bookNextBtn.disabled = currentBookPage === totalBookPages - 1;
+      // Update Top and Middle Side Prev / Next Buttons
+      const isFirst = currentBookPage === 0;
+      const isLast = currentBookPage === totalBookPages - 1;
+
+      if (bookPrevBtn) bookPrevBtn.disabled = isFirst;
+      if (bookNextBtn) bookNextBtn.disabled = isLast;
+      if (bookSidePrevBtn) bookSidePrevBtn.disabled = isFirst;
+      if (bookSideNextBtn) bookSideNextBtn.disabled = isLast;
 
       // Update Dots
       const dots = document.querySelectorAll('.book-dot');
