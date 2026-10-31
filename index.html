@@ -53,7 +53,7 @@
 
       <nav>
         <ul class="nav-menu">
-          <li><a href="#work" class="nav-link">Work <span class="count">[8]</span></a></li>
+          <li><a href="#work" class="nav-link">Monograph <span class="count">[Book]</span></a></li>
           <li><a href="#skills" class="nav-link">Skills <span class="count">[5]</span></a></li>
           <li><a href="#venture" class="nav-link">Venture <span class="count">[Ribhus]</span></a></li>
           <li><a href="#timeline" class="nav-link">Timeline</a></li>
@@ -129,7 +129,7 @@
             <span>&bull;</span> <span>GitHub</span> <span>&nearr;</span>
           </a>
           <a href="#work" class="social-pill">
-            <span>&bull;</span> <span>All 8 Projects</span> <span>&nearr;</span>
+            <span>&bull;</span> <span>Project Book (Folio)</span> <span>&nearr;</span>
           </a>
           <a href="#venture" class="social-pill">
             <span>&bull;</span> <span>Ribhus Studio</span> <span>&nearr;</span>
@@ -144,193 +144,787 @@
       </div>
     </section>
 
-    <!-- Selected Work Section (2 PROJECTS PER SLIDE SLIDESHOW) -->
+    <!-- Selected Work Section (PREMIUM MONOGRAPH BOOK & CASE STUDY FOLIO) -->
     <section class="section-wrapper" id="work">
       <div class="section-watermark-header reveal-blur">
-        <div class="watermark-bg-text">PORTFOLIO</div>
+        <div class="watermark-bg-text">MONOGRAPH</div>
         <div class="section-top-bar">
-          <h2 class="section-title"><span class="slash">/</span>SELECTED WORK</h2>
-          
-          <!-- Slideshow Controls -->
-          <div class="slider-btn-group">
-            <button class="slider-nav-btn" id="prevSlideBtn" onclick="prevProjectSlide()" aria-label="Previous Slide">&larr; Previous</button>
-            <span class="slide-counter-badge" id="slideCounterText">Slide 1 / 4</span>
-            <button class="slider-nav-btn" id="nextSlideBtn" onclick="nextProjectSlide()" aria-label="Next Slide">Next &rarr;</button>
-          </div>
+          <h2 class="section-title"><span class="slash">/</span>PROJECT MONOGRAPH</h2>
+          <span class="section-subtitle-badge">BIM &bull; Engineering &bull; Digital Practice Folio</span>
         </div>
       </div>
 
-      <!-- Slide Indicator Bar -->
-      <div class="slider-controls-wrap reveal-blur delay-1">
-        <div class="slider-indicators" id="sliderIndicators">
-          <button class="slider-dot active" onclick="goToProjectSlide(0)"></button>
-          <button class="slider-dot" onclick="goToProjectSlide(1)"></button>
-          <button class="slider-dot" onclick="goToProjectSlide(2)"></button>
-          <button class="slider-dot" onclick="goToProjectSlide(3)"></button>
+      <!-- Monograph Book Container -->
+      <div class="book-shell reveal-blur delay-1">
+        
+        <!-- Book Top Bar / Header -->
+        <div class="book-top-bar">
+          <div class="book-brand-tag">
+            <span class="book-spine-indicator"></span>
+            <div class="book-tag-text">
+              <strong>ANKIT KUMAR &mdash; SELECTED WORKS</strong>
+              <span>ARCHITECTURAL BIM &bull; DIGITAL PRACTICE &bull; ENGINEERING</span>
+            </div>
+          </div>
+
+          <div class="book-controls-group">
+            <button class="book-toc-btn" id="bookTocBtn" onclick="toggleBookToc()" aria-label="Toggle Table of Contents">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+              <span>Table of Contents</span>
+            </button>
+
+            <div class="book-nav-arrows">
+              <button class="book-arrow-btn" id="bookPrevBtn" onclick="prevBookPage()" aria-label="Previous Page">
+                &larr; <span class="nav-text-desktop">Previous</span>
+              </button>
+              <span class="book-page-indicator" id="bookPageIndicator">Page 01 / 10</span>
+              <button class="book-arrow-btn" id="bookNextBtn" onclick="nextBookPage()" aria-label="Next Page">
+                <span class="nav-text-desktop">Next</span> &rarr;
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <!-- 2-Project Slider Track Container -->
-      <div class="slider-track-container reveal-blur delay-2">
-        <div class="projects-slider-track" id="projectsSliderTrack">
-          
-          <!-- SLIDE 1 (Projects 1 & 2) -->
-          <div class="project-slide">
-            
-            <!-- Project 1: Truss Bridge Renovation -->
-            <article class="project-card" onclick="openProjectModal('truss')">
-              <div class="project-media-box">
-                <span class="project-badge-tag">IS 800:2007 · FREELANCE</span>
-                <img src="assets/images/truss_gusset_1.jpg" alt="Truss Bridge Renovation AutoCAD" class="project-img" />
-                <div class="project-hover-arrow">&nearr;</div>
-              </div>
-              <div class="project-info-box">
-                <h3 class="project-card-title">Truss Bridge Renovation Project | IS 800:2007, AutoCAD (Freelance)</h3>
-                <div class="project-tags-list">
-                  <span class="tag-pill">AutoCAD 2D (DWG)</span>
-                  <span class="tag-pill">Gusset Plate &amp; Girder</span>
-                  <span class="tag-pill">17 Sheets in 8 Days</span>
+        <!-- Book Stage (The Pages Container) -->
+        <div class="book-stage" id="bookStage">
+
+          <!-- PAGE 0: TABLE OF CONTENTS (INDEX) -->
+          <article class="book-page active" data-page-index="0" id="bookPage-0">
+            <div class="book-spread toc-spread">
+              <div class="toc-left-pane">
+                <div class="toc-header-meta">
+                  <span class="toc-pill">Folio Index</span>
+                  <span class="toc-edition">Edition 2026</span>
+                </div>
+                <h3 class="toc-title">Table of Contents</h3>
+                <p class="toc-desc">
+                  An architectural monograph cataloging digital BIM modeling, European LOD 200–350 delivery, 2D-to-BIM transformation at Ribhus, structural steel detailing, and analytical engineering platforms.
+                </p>
+
+                <div class="toc-signature-box">
+                  <div class="toc-sig-row">
+                    <strong>Primary Focus</strong>
+                    <span>BIM Coordination &bull; ArchiCAD &bull; Revit &bull; IFC</span>
+                  </div>
+                  <div class="toc-sig-row">
+                    <strong>Studio Venture</strong>
+                    <span>Ribhus &mdash; theribhus.com</span>
+                  </div>
+                  <div class="toc-sig-row">
+                    <strong>Academic Base</strong>
+                    <span>DTU Civil Engineering '27</span>
+                  </div>
+                </div>
+
+                <div class="toc-quick-actions">
+                  <button class="btn-pill-dark" onclick="goToBookPage(1)">
+                    <span>Start Reading (Page 01)</span> &rarr;
+                  </button>
+                  <a href="https://theribhus.com" target="_blank" rel="noopener" class="btn-pill-light">
+                    <span>Visit theribhus.com</span> &nearr;
+                  </a>
                 </div>
               </div>
-            </article>
 
-            <!-- Project 2: Celekohr GmbH BIM Portfolio -->
-            <article class="project-card" onclick="openProjectModal('celekhor')">
-              <div class="project-media-box">
-                <span class="project-badge-tag">CELEKOHR GMBH (GERMANY)</span>
-                <img src="assets/images/3d_bim_portfolio.jpg" alt="Celekohr GmbH European BIM Models" class="project-img" />
-                <div class="project-hover-arrow">&nearr;</div>
+              <div class="toc-right-pane">
+                <div class="toc-section-label">PART I &bull; BIM &amp; ARCHITECTURAL PRACTICE</div>
+                <ul class="toc-list">
+                  <li class="toc-item" onclick="goToBookPage(1)">
+                    <span class="toc-num">01</span>
+                    <div class="toc-entry">
+                      <strong>Celekohr GmbH 150+ European BIM Model Portfolio</strong>
+                      <span>ArchiCAD LOD 200–300 &bull; German Energy Audits &bull; IFC 2x3</span>
+                    </div>
+                    <span class="toc-target-page">p. 02</span>
+                  </li>
+                  <li class="toc-item" onclick="goToBookPage(2)">
+                    <span class="toc-num">02</span>
+                    <div class="toc-entry">
+                      <strong>Ribhus — 2D Plans to 3D BIM Production Studio</strong>
+                      <span> theribhus.com &bull; Scan-to-BIM &bull; LOD 200–350 &bull; BOQ Extractions</span>
+                    </div>
+                    <span class="toc-target-page">p. 03</span>
+                  </li>
+                  <li class="toc-item" onclick="goToBookPage(3)">
+                    <span class="toc-num">03</span>
+                    <div class="toc-entry">
+                      <strong>3BHK Residential Planning &amp; BIM Documentation | 32 x 50 ft</strong>
+                      <span>Bylaws Compliance &bull; Sections, Elevations &amp; Daylight Optimization</span>
+                    </div>
+                    <span class="toc-target-page">p. 04</span>
+                  </li>
+                  <li class="toc-item" onclick="goToBookPage(4)">
+                    <span class="toc-num">04</span>
+                    <div class="toc-entry">
+                      <strong>4-Floor Residential Building (G+3) | ArchiCAD Multi-Story Modeling</strong>
+                      <span>Vertical Circulation Cores &bull; Service Ducts &bull; Structural Grid Alignment</span>
+                    </div>
+                    <span class="toc-target-page">p. 05</span>
+                  </li>
+                  <li class="toc-item" onclick="goToBookPage(5)">
+                    <span class="toc-num">05</span>
+                    <div class="toc-entry">
+                      <strong>Contemporary Residential House Planning &amp; Architectural Design</strong>
+                      <span>ArchiCAD Modeling &bull; Twinmotion Renders &bull; Indoor-Outdoor Living</span>
+                    </div>
+                    <span class="toc-target-page">p. 06</span>
+                  </li>
+                </ul>
+
+                <div class="toc-section-label" style="margin-top: 22px;">PART II &bull; STRUCTURAL, DATA &amp; HARDWARE INNOVATION</div>
+                <ul class="toc-list">
+                  <li class="toc-item" onclick="goToBookPage(6)">
+                    <span class="toc-num">06</span>
+                    <div class="toc-entry">
+                      <strong>Truss Bridge Renovation Project | IS 800:2007, AutoCAD</strong>
+                      <span>17 Detailed DWG Bolted Connection Sheets &bull; 8-Day Client Turnaround</span>
+                    </div>
+                    <span class="toc-target-page">p. 07</span>
+                  </li>
+                  <li class="toc-item" onclick="goToBookPage(7)">
+                    <span class="toc-num">07</span>
+                    <div class="toc-entry">
+                      <strong>Delhi Traffic Congestion &amp; Signal Optimization Analysis</strong>
+                      <span>SQL Modeling &bull; 5-Page Power BI Dashboard &bull; 2,000+ Observations</span>
+                    </div>
+                    <span class="toc-target-page">p. 08</span>
+                  </li>
+                  <li class="toc-item" onclick="goToBookPage(8)">
+                    <span class="toc-num">08</span>
+                    <div class="toc-entry">
+                      <strong>CadetOS — Military Battalion Operations Data Platform</strong>
+                      <span>Requirements PRD &bull; 150+ Personnel Unit Scheduling &bull; Live Dashboards</span>
+                    </div>
+                    <span class="toc-target-page">p. 09</span>
+                  </li>
+                  <li class="toc-item" onclick="goToBookPage(9)">
+                    <span class="toc-num">09</span>
+                    <div class="toc-entry">
+                      <strong>Winner &mdash; Affordable EMG Bionic Arm Innovation (&lt; ₹75,000)</strong>
+                      <span>1st Place Delhi Innovation &bull; All-India Finalist Vijayawada</span>
+                    </div>
+                    <span class="toc-target-page">p. 10</span>
+                  </li>
+                </ul>
               </div>
-              <div class="project-info-box">
-                <h3 class="project-card-title">Celekohr GmbH 150+ European Residential BIM Model Portfolio</h3>
-                <div class="project-tags-list">
-                  <span class="tag-pill">ArchiCAD LOD 200-300</span>
-                  <span class="tag-pill">IFC Workflows</span>
-                  <span class="tag-pill">Energy Audit Models</span>
+            </div>
+          </article>
+
+          <!-- PAGE 1: CELEKOHR GMBH BIM PORTFOLIO -->
+          <article class="book-page" data-page-index="1" id="bookPage-1">
+            <div class="book-spread">
+              <div class="book-visual-pane">
+                <div class="book-main-img-wrap" onclick="openProjectModal('celekhor')">
+                  <span class="book-tag-overlay">GERMAN BIM PRACTICE &bull; LOD 200–300</span>
+                  <img src="assets/images/3d_bim_portfolio.jpg" alt="Celekohr GmbH European BIM Models" class="book-hero-img" />
+                  <div class="book-zoom-indicator">&nearr; Click to view high-res case study</div>
+                </div>
+                <div class="book-thumb-strip">
+                  <img src="assets/images/3d_project2.jpg" alt="European Model Detail" onclick="openProjectModal('celekhor')" />
+                  <img src="assets/images/3d_project3.jpg" alt="Thermal Zone Model" onclick="openProjectModal('celekhor')" />
+                  <img src="assets/images/3d_p2_1.jpg" alt="Floor Layout" onclick="openProjectModal('celekhor')" />
                 </div>
               </div>
-            </article>
 
-          </div>
+              <div class="book-narrative-pane">
+                <div class="book-chapter-meta">
+                  <span class="book-chapter-badge">Chapter 01 &bull; Core BIM</span>
+                  <span class="book-running-folio">Folio Page 02</span>
+                </div>
 
-          <!-- SLIDE 2 (Projects 3 & 4) -->
-          <div class="project-slide">
+                <h3 class="book-project-title">Celekohr GmbH 150+ European Residential BIM Model Portfolio</h3>
+                <p class="book-project-subline">
+                  Modelled 150+ residential and commercial architectural projects in ArchiCAD at LOD 200-300 in six months, building the models used for energy audits and thermal evaluations for clients in Germany.
+                </p>
 
-            <!-- Project 3: 3BHK Residential Project -->
-            <article class="project-card" onclick="openProjectModal('residential3bhk')">
-              <div class="project-media-box">
-                <span class="project-badge-tag">BIM DOCUMENTATION</span>
-                <img src="assets/images/3d_project3.jpg" alt="3BHK Residential BIM Project" class="project-img" />
-                <div class="project-hover-arrow">&nearr;</div>
-              </div>
-              <div class="project-info-box">
-                <h3 class="project-card-title">3BHK Residential Planning &amp; BIM Documentation | 32 x 50 ft</h3>
-                <div class="project-tags-list">
-                  <span class="tag-pill">ArchiCAD</span>
-                  <span class="tag-pill">Sections &amp; Elevations</span>
-                  <span class="tag-pill">Bylaws Compliance</span>
+                <div class="book-meta-grid">
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Practice</span>
+                    <strong class="b-meta-value">Celekohr GmbH (Germany)</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Standards</span>
+                    <strong class="b-meta-value">DIN Standards &bull; LOD 200–300</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Software</span>
+                    <strong class="b-meta-value">ArchiCAD &bull; IFC Workflows</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">QA/QC Volume</span>
+                    <strong class="b-meta-value">30+ Monthly Pre-checks</strong>
+                  </div>
+                </div>
+
+                <div class="book-case-bullets">
+                  <h4>Core Engineering Highlights</h4>
+                  <ul>
+                    <li>Constructed 150+ precision architectural models in ArchiCAD to feed downstream thermodynamic energy simulations and DIN compliance audits.</li>
+                    <li>Exported coordinated IFC files and ran 30+ monthly QA/QC pre-checks to catch dimension discrepancies and missing classifications.</li>
+                    <li>Documented BIM standards across international remote teams, maintaining strict coordinate geometry and layer hierarchies.</li>
+                  </ul>
+                </div>
+
+                <div class="book-action-row">
+                  <button class="btn-pill-dark" onclick="openProjectModal('celekhor')">
+                    <span>Explore Full Case Study</span> &nearr;
+                  </button>
+                  <a href="https://www.linkedin.com/posts/activity-7421784170487750656-0s55?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" rel="noopener" class="btn-pill-light">
+                    <span>LinkedIn Update</span> &nearr;
+                  </a>
                 </div>
               </div>
-            </article>
+            </div>
+          </article>
 
-            <!-- Project 4: 4-Floor Residential Building (G+3) -->
-            <article class="project-card" onclick="openProjectModal('multistory')">
-              <div class="project-media-box">
-                <span class="project-badge-tag">MULTI-STORY ARCHITECTURE</span>
-                <img src="assets/images/3d_project2.jpg" alt="4-Floor Residential Building G+3" class="project-img" />
-                <div class="project-hover-arrow">&nearr;</div>
-              </div>
-              <div class="project-info-box">
-                <h3 class="project-card-title">4-Floor Residential Building (G+3) | ArchiCAD Multi-Story Modeling</h3>
-                <div class="project-tags-list">
-                  <span class="tag-pill">ArchiCAD</span>
-                  <span class="tag-pill">Circulation Cores</span>
-                  <span class="tag-pill">Structural Grid Alignment</span>
+          <!-- PAGE 2: RIBHUS VENTURE & 2D-TO-BIM STUDIO -->
+          <article class="book-page" data-page-index="2" id="bookPage-2">
+            <div class="book-spread">
+              <div class="book-visual-pane">
+                <div class="book-main-img-wrap" onclick="openProjectModal('ribhus')">
+                  <span class="book-tag-overlay">STUDIO VENTURE &bull; theribhus.com</span>
+                  <img src="assets/images/3d_project2.jpg" alt="Ribhus BIM Studio Deliverables" class="book-hero-img" />
+                  <div class="book-zoom-indicator">&nearr; Click to view studio case study</div>
+                </div>
+                <div class="book-thumb-strip">
+                  <img src="assets/images/ribhus_logo.png" alt="Ribhus Studio Logo" onclick="openProjectModal('ribhus')" style="object-fit: contain; background: #fff; padding: 6px;" />
+                  <img src="assets/images/3d_p2_2.jpg" alt="Ribhus Multi-Story CAD" onclick="openProjectModal('ribhus')" />
+                  <img src="assets/images/3d_bim_portfolio.jpg" alt="Ribhus European Scope" onclick="openProjectModal('ribhus')" />
                 </div>
               </div>
-            </article>
 
-          </div>
+              <div class="book-narrative-pane">
+                <div class="book-chapter-meta">
+                  <span class="book-chapter-badge">Chapter 02 &bull; Digital Practice</span>
+                  <span class="book-running-folio">Folio Page 03</span>
+                </div>
 
-          <!-- SLIDE 3 (Projects 5 & 6) -->
-          <div class="project-slide">
+                <h3 class="book-project-title">Ribhus — 2D Plans to 3D BIM Studio &bull; theribhus.com</h3>
+                <p class="book-project-subline">
+                  Co-founded an independent BIM and digital drafting studio converting legacy paper blueprints, survey PDFs, and CAD files into coordinated 3D BIM models at LOD 200–350 for European architectural and energy consulting firms.
+                </p>
 
-            <!-- Project 5: Delhi Traffic Congestion Analysis -->
-            <article class="project-card" onclick="openProjectModal('traffic')">
-              <div class="project-media-box">
-                <span class="project-badge-tag">DATA &amp; BI ANALYTICS</span>
-                <img src="assets/images/traffic_dash.png" alt="Traffic Congestion Analytics Dashboard" class="project-img" />
-                <div class="project-hover-arrow">&nearr;</div>
-              </div>
-              <div class="project-info-box">
-                <h3 class="project-card-title">Delhi Traffic Congestion &amp; Signal Optimization Analysis | SQL, Power BI</h3>
-                <div class="project-tags-list">
-                  <span class="tag-pill">SQL Analysis</span>
-                  <span class="tag-pill">5-Page Power BI</span>
-                  <span class="tag-pill">2,000+ Observations</span>
+                <div class="book-meta-grid">
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Domain</span>
+                    <strong class="b-meta-value">theribhus.com</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Role</span>
+                    <strong class="b-meta-value">Co-Founder &bull; Operations</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Target Markets</span>
+                    <strong class="b-meta-value">Germany &bull; United Kingdom</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Turnaround</span>
+                    <strong class="b-meta-value">24–48h Residential SLA</strong>
+                  </div>
+                </div>
+
+                <div class="book-case-bullets">
+                  <h4>Core Engineering Highlights</h4>
+                  <ul>
+                    <li>Structured standard operating procedures for Scan-to-BIM, CAD drafting, and IFC quality assurance checks for international practices.</li>
+                    <li>Developed automated BOQ extraction and component scheduling templates in ArchiCAD and Revit.</li>
+                    <li>Maintains a weekly outreach pipeline of 20–25 architectural and energy consultancy targets across Germany and the UK.</li>
+                  </ul>
+                </div>
+
+                <div class="book-action-row">
+                  <a href="https://theribhus.com" target="_blank" rel="noopener" class="btn-pill-dark">
+                    <span>Visit theribhus.com</span> &nearr;
+                  </a>
+                  <a href="https://www.linkedin.com/company/theribhus/" target="_blank" rel="noopener" class="btn-pill-light">
+                    <span>Ribhus LinkedIn</span> &nearr;
+                  </a>
                 </div>
               </div>
-            </article>
+            </div>
+          </article>
 
-            <!-- Project 6: CadetOS Platform -->
-            <article class="project-card" onclick="openProjectModal('cadetos')">
-              <div class="project-media-box">
-                <span class="project-badge-tag">OPERATIONS PLATFORM</span>
-                <img src="assets/images/cadet_os.png" alt="CadetOS Battalion Management System" class="project-img" />
-                <div class="project-hover-arrow">&nearr;</div>
-              </div>
-              <div class="project-info-box">
-                <h3 class="project-card-title">CadetOS-Operations Data Platform | SQL, Power BI</h3>
-                <div class="project-tags-list">
-                  <span class="tag-pill">Requirements PRD</span>
-                  <span class="tag-pill">Dashboard Prototype</span>
-                  <span class="tag-pill">150+ Personnel Unit</span>
+          <!-- PAGE 3: 3BHK RESIDENTIAL PLANNING & BIM -->
+          <article class="book-page" data-page-index="3" id="bookPage-3">
+            <div class="book-spread">
+              <div class="book-visual-pane">
+                <div class="book-main-img-wrap" onclick="openProjectModal('residential3bhk')">
+                  <span class="book-tag-overlay">BIM DOCUMENTATION &bull; 32 x 50 FT</span>
+                  <img src="assets/images/3d_project3.jpg" alt="3BHK Residential BIM Project" class="book-hero-img" />
+                  <div class="book-zoom-indicator">&nearr; Click to view drawing package</div>
+                </div>
+                <div class="book-thumb-strip">
+                  <img src="assets/images/3d_p3_1.jpg" alt="Floor Layout" onclick="openProjectModal('residential3bhk')" />
+                  <img src="assets/images/3d_p3_2.jpg" alt="Longitudinal Section" onclick="openProjectModal('residential3bhk')" />
+                  <img src="assets/images/3d_p3_3.jpg" alt="Elevation Rendering" onclick="openProjectModal('residential3bhk')" />
                 </div>
               </div>
-            </article>
 
-          </div>
+              <div class="book-narrative-pane">
+                <div class="book-chapter-meta">
+                  <span class="book-chapter-badge">Chapter 03 &bull; Residential BIM</span>
+                  <span class="book-running-folio">Folio Page 04</span>
+                </div>
 
-          <!-- SLIDE 4 (Projects 7 & 8) -->
-          <div class="project-slide">
+                <h3 class="book-project-title">3BHK Residential Planning &amp; BIM Documentation | 32 x 50 ft</h3>
+                <p class="book-project-subline">
+                  Site-responsive architectural planning and technical BIM documentation for a 3BHK residential residence on a 32 x 50 ft plot compliant with local municipal building regulations.
+                </p>
 
-            <!-- Project 7: Residential House Planning & Design -->
-            <article class="project-card" onclick="openProjectModal('houseplan')">
-              <div class="project-media-box">
-                <span class="project-badge-tag">ARCHITECTURAL DESIGN</span>
-                <img src="assets/images/3d_project1.jpg" alt="Residential House Planning & Design" class="project-img" />
-                <div class="project-hover-arrow">&nearr;</div>
-              </div>
-              <div class="project-info-box">
-                <h3 class="project-card-title">Residential House Planning &amp; Architectural Design</h3>
-                <div class="project-tags-list">
-                  <span class="tag-pill">ArchiCAD Modeling</span>
-                  <span class="tag-pill">Daylight Optimization</span>
-                  <span class="tag-pill">Zoning &amp; Living Spaces</span>
+                <div class="book-meta-grid">
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Plot Dimensions</span>
+                    <strong class="b-meta-value">32 &times; 50 ft (1,600 sq.ft)</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Software</span>
+                    <strong class="b-meta-value">ArchiCAD &bull; BIMx</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Scope</span>
+                    <strong class="b-meta-value">Plans, Sections, Elevation</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Execution</span>
+                    <strong class="b-meta-value">3 Weeks</strong>
+                  </div>
+                </div>
+
+                <div class="book-case-bullets">
+                  <h4>Core Engineering Highlights</h4>
+                  <ul>
+                    <li>Strict spatial separation of public guest entry, semi-private family lounge, and private bedroom suites.</li>
+                    <li>Cross-ventilation pathways and natural illumination shafts engineered to cut daytime artificial lighting reliance.</li>
+                    <li>Integrated architectural floor plans directly with structural columns and plumbing chase ducts.</li>
+                  </ul>
+                </div>
+
+                <div class="book-action-row">
+                  <button class="btn-pill-dark" onclick="openProjectModal('residential3bhk')">
+                    <span>Explore Full Case Study</span> &nearr;
+                  </button>
+                  <a href="https://www.linkedin.com/posts/activity-7412536921660252160-cSfd?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" rel="noopener" class="btn-pill-light">
+                    <span>LinkedIn Case Study</span> &nearr;
+                  </a>
                 </div>
               </div>
-            </article>
+            </div>
+          </article>
 
-            <!-- Project 8: Affordable EMG Bionic Arm -->
-            <article class="project-card" onclick="openProjectModal('bionic')">
-              <div class="project-media-box">
-                <span class="project-badge-tag">DELHI INNOVATION WINNER</span>
-                <img src="assets/images/bionic_arm.png" alt="Affordable EMG Bionic Arm" class="project-img" />
-                <div class="project-hover-arrow">&nearr;</div>
-              </div>
-              <div class="project-info-box">
-                <h3 class="project-card-title">Winner – Affordable EMG Bionic Arm Innovation (&lt; ₹75,000 Cost)</h3>
-                <div class="project-tags-list">
-                  <span class="tag-pill">1st Place Delhi Directorate</span>
-                  <span class="tag-pill">All-India Finalist</span>
-                  <span class="tag-pill">200+ Colleges</span>
+          <!-- PAGE 4: 4-FLOOR RESIDENTIAL BUILDING (G+3) -->
+          <article class="book-page" data-page-index="4" id="bookPage-4">
+            <div class="book-spread">
+              <div class="book-visual-pane">
+                <div class="book-main-img-wrap" onclick="openProjectModal('multistory')">
+                  <span class="book-tag-overlay">MULTI-STORY &bull; G+3 ARCHICAD</span>
+                  <img src="assets/images/3d_project2.jpg" alt="4-Floor Residential Building G+3" class="book-hero-img" />
+                  <div class="book-zoom-indicator">&nearr; Click to view multi-story model</div>
+                </div>
+                <div class="book-thumb-strip">
+                  <img src="assets/images/3d_p2_1.jpg" alt="Level Plan" onclick="openProjectModal('multistory')" />
+                  <img src="assets/images/3d_p2_2.jpg" alt="Shaft Coordination" onclick="openProjectModal('multistory')" />
+                  <img src="assets/images/3d_p2_3.jpg" alt="Exterior Envelope" onclick="openProjectModal('multistory')" />
                 </div>
               </div>
-            </article>
 
-          </div>
+              <div class="book-narrative-pane">
+                <div class="book-chapter-meta">
+                  <span class="book-chapter-badge">Chapter 04 &bull; Multi-Story BIM</span>
+                  <span class="book-running-folio">Folio Page 05</span>
+                </div>
+
+                <h3 class="book-project-title">4-Floor Residential Building (G+3) | ArchiCAD Multi-Story Modeling</h3>
+                <p class="book-project-subline">
+                  Multi-level residential building modeling featuring unified vertical circulation cores, structural column alignments, and floor-by-floor space planning.
+                </p>
+
+                <div class="book-meta-grid">
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Scale</span>
+                    <strong class="b-meta-value">Ground + 3 Levels (G+3)</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Software</span>
+                    <strong class="b-meta-value">ArchiCAD &bull; AutoCAD</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Discipline</span>
+                    <strong class="b-meta-value">Architectural BIM</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Timeline</span>
+                    <strong class="b-meta-value">4 Weeks</strong>
+                  </div>
+                </div>
+
+                <div class="book-case-bullets">
+                  <h4>Core Engineering Highlights</h4>
+                  <ul>
+                    <li>Coordinated central vertical core incorporating staircases, elevator shaft, and continuous MEP wet service risers.</li>
+                    <li>Maintained exact grid alignment across all four storeys to prevent transfer beam eccentricities.</li>
+                    <li>Generated unified elevation drawings, section perspectives, and BIMx virtual walkthrough model.</li>
+                  </ul>
+                </div>
+
+                <div class="book-action-row">
+                  <button class="btn-pill-dark" onclick="openProjectModal('multistory')">
+                    <span>Explore Full Case Study</span> &nearr;
+                  </button>
+                  <a href="https://www.linkedin.com/posts/activity-7412921761337540608-OzDO?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" rel="noopener" class="btn-pill-light">
+                    <span>LinkedIn Case Study</span> &nearr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PAGE 5: CONTEMPORARY RESIDENTIAL HOUSE PLANNING -->
+          <article class="book-page" data-page-index="5" id="bookPage-5">
+            <div class="book-spread">
+              <div class="book-visual-pane">
+                <div class="book-main-img-wrap" onclick="openProjectModal('houseplan')">
+                  <span class="book-tag-overlay">ARCHITECTURAL DESIGN &bull; RENDERS</span>
+                  <img src="assets/images/3d_project1.jpg" alt="Residential House Planning & Design" class="book-hero-img" />
+                  <div class="book-zoom-indicator">&nearr; Click to view design package</div>
+                </div>
+                <div class="book-thumb-strip">
+                  <img src="assets/images/3d_p1_1.jpg" alt="Patio View" onclick="openProjectModal('houseplan')" />
+                  <img src="assets/images/3d_p1_2.jpg" alt="Façade Study" onclick="openProjectModal('houseplan')" />
+                  <img src="assets/images/3d_p1_3.jpg" alt="Daylight Simulation" onclick="openProjectModal('houseplan')" />
+                </div>
+              </div>
+
+              <div class="book-narrative-pane">
+                <div class="book-chapter-meta">
+                  <span class="book-chapter-badge">Chapter 05 &bull; Architectural Concept</span>
+                  <span class="book-running-folio">Folio Page 06</span>
+                </div>
+
+                <h3 class="book-project-title">Residential House Planning &amp; Architectural Design</h3>
+                <p class="book-project-subline">
+                  Architectural concept planning, exterior modeling, daylight analysis, and material study for contemporary private residential living.
+                </p>
+
+                <div class="book-meta-grid">
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Typology</span>
+                    <strong class="b-meta-value">Single-Family Residence</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Software</span>
+                    <strong class="b-meta-value">ArchiCAD &bull; Twinmotion</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Deliverable</span>
+                    <strong class="b-meta-value">Plans, Renders &bull; 3D Shell</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Duration</span>
+                    <strong class="b-meta-value">2 Weeks</strong>
+                  </div>
+                </div>
+
+                <div class="book-case-bullets">
+                  <h4>Core Engineering Highlights</h4>
+                  <ul>
+                    <li>Balanced open indoor living spaces with landscaped outdoor patio integration.</li>
+                    <li>Utilized ArchiCAD composite wall assemblies and precise window fenestrations for optimal passive solar heating.</li>
+                    <li>Produced presentation-grade 3D visualizations in Twinmotion for client sign-off.</li>
+                  </ul>
+                </div>
+
+                <div class="book-action-row">
+                  <button class="btn-pill-dark" onclick="openProjectModal('houseplan')">
+                    <span>Explore Full Case Study</span> &nearr;
+                  </button>
+                  <a href="https://www.linkedin.com/posts/activity-7413589325013151744-tvrp?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" rel="noopener" class="btn-pill-light">
+                    <span>LinkedIn Case Study</span> &nearr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PAGE 6: TRUSS BRIDGE RENOVATION -->
+          <article class="book-page" data-page-index="6" id="bookPage-6">
+            <div class="book-spread">
+              <div class="book-visual-pane">
+                <div class="book-main-img-wrap" onclick="openProjectModal('truss')">
+                  <span class="book-tag-overlay">IS 800:2007 &bull; FREELANCE DWG</span>
+                  <img src="assets/images/truss_gusset_1.jpg" alt="Truss Bridge Renovation AutoCAD" class="book-hero-img" />
+                  <div class="book-zoom-indicator">&nearr; Click to view connection sheets</div>
+                </div>
+                <div class="book-thumb-strip">
+                  <img src="assets/images/truss_gusset_2.jpg" alt="Gusset Plate Sheet" onclick="openProjectModal('truss')" />
+                  <img src="assets/images/truss_gusset_3.png" alt="Bolted Connection Detail" onclick="openProjectModal('truss')" />
+                  <img src="assets/images/truss_gusset_1.jpg" alt="Girder Layout" onclick="openProjectModal('truss')" />
+                </div>
+              </div>
+
+              <div class="book-narrative-pane">
+                <div class="book-chapter-meta">
+                  <span class="book-chapter-badge">Chapter 06 &bull; Structural Steel</span>
+                  <span class="book-running-folio">Folio Page 07</span>
+                </div>
+
+                <h3 class="book-project-title">Truss Bridge Renovation Project | IS 800:2007, AutoCAD (Freelance)</h3>
+                <p class="book-project-subline">
+                  Won a freelance opportunity with a consulting firm in Rajasthan and delivered 17 detailed 2D AutoCAD (DWG) sheets of gusset plate and girder bolted connections in 8 days.
+                </p>
+
+                <div class="book-meta-grid">
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Output</span>
+                    <strong class="b-meta-value">17 DWG Drawing Sheets</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Standard</span>
+                    <strong class="b-meta-value">IS 800:2007 Steel Code</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Software</span>
+                    <strong class="b-meta-value">AutoCAD 2D (DWG)</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Timeline</span>
+                    <strong class="b-meta-value">8 Days (Delivered On Time)</strong>
+                  </div>
+                </div>
+
+                <div class="book-case-bullets">
+                  <h4>Core Engineering Highlights</h4>
+                  <ul>
+                    <li>Turned complex consulting structural inputs into precision fabrication sheets for steel truss connections.</li>
+                    <li>Detailed gusset plate geometries, bolt pitch/gauge spacing, and edge distances per IS 800:2007 rules.</li>
+                    <li>Maintained fast turnaround and zero revision requests on client connection geometry.</li>
+                  </ul>
+                </div>
+
+                <div class="book-action-row">
+                  <button class="btn-pill-dark" onclick="openProjectModal('truss')">
+                    <span>Explore Full Case Study</span> &nearr;
+                  </button>
+                  <a href="https://www.linkedin.com/in/ankitk-dtu/" target="_blank" rel="noopener" class="btn-pill-light">
+                    <span>LinkedIn Profile</span> &nearr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PAGE 7: DELHI TRAFFIC CONGESTION ANALYSIS -->
+          <article class="book-page" data-page-index="7" id="bookPage-7">
+            <div class="book-spread">
+              <div class="book-visual-pane">
+                <div class="book-main-img-wrap" onclick="openProjectModal('traffic')">
+                  <span class="book-tag-overlay">DATA ANALYTICS &bull; POWER BI &amp; SQL</span>
+                  <img src="assets/images/traffic_dash.png" alt="Traffic Congestion Analytics Dashboard" class="book-hero-img" />
+                  <div class="book-zoom-indicator">&nearr; Click to view analytics dashboard</div>
+                </div>
+                <div class="book-thumb-strip">
+                  <img src="assets/images/traffic_dash.png" alt="Route Analysis" onclick="openProjectModal('traffic')" />
+                  <img src="assets/images/cadet_os.png" alt="Corridor Data" onclick="openProjectModal('traffic')" />
+                  <img src="assets/images/amazon_sales_dash.png" alt="KPI Model" onclick="openProjectModal('traffic')" />
+                </div>
+              </div>
+
+              <div class="book-narrative-pane">
+                <div class="book-chapter-meta">
+                  <span class="book-chapter-badge">Chapter 07 &bull; Urban Analytics</span>
+                  <span class="book-running-folio">Folio Page 08</span>
+                </div>
+
+                <h3 class="book-project-title">Delhi Traffic Congestion &amp; Signal Optimization Analysis | SQL, Power BI</h3>
+                <p class="book-project-subline">
+                  Conducted SQL-based data analysis of more than 2,000 observations on 5 test routes to determine key points of congestion, traffic patterns, and signal delay trends.
+                </p>
+
+                <div class="book-meta-grid">
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Dataset</span>
+                    <strong class="b-meta-value">2,000+ Observations</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Corridors</span>
+                    <strong class="b-meta-value">5 Key Delhi Arterials</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Dashboard</span>
+                    <strong class="b-meta-value">5-Page Power BI</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Stack</span>
+                    <strong class="b-meta-value">SQL &bull; Power BI &bull; Excel</strong>
+                  </div>
+                </div>
+
+                <div class="book-case-bullets">
+                  <h4>Core Engineering Highlights</h4>
+                  <ul>
+                    <li>Modeled peak vs. non-peak bottleneck trends and quantified average intersection delay reductions.</li>
+                    <li>Architected SQL queries to merge simulated corridor timings with public municipal transit datasets.</li>
+                    <li>Delivered actionable signal re-timing recommendations for transport infrastructure planning.</li>
+                  </ul>
+                </div>
+
+                <div class="book-action-row">
+                  <button class="btn-pill-dark" onclick="openProjectModal('traffic')">
+                    <span>Explore Full Case Study</span> &nearr;
+                  </button>
+                  <a href="https://github.com/ankitk-glitch/Delhi-Traffic-Analytics-Dashboard" target="_blank" rel="noopener" class="btn-pill-light">
+                    <span>GitHub Repo</span> &nearr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PAGE 8: CADETOS OPERATIONS PLATFORM -->
+          <article class="book-page" data-page-index="8" id="bookPage-8">
+            <div class="book-spread">
+              <div class="book-visual-pane">
+                <div class="book-main-img-wrap" onclick="openProjectModal('cadetos')">
+                  <span class="book-tag-overlay">OPERATIONS &bull; BATTALION ERP</span>
+                  <img src="assets/images/cadet_os.png" alt="CadetOS Battalion Management System" class="book-hero-img" />
+                  <div class="book-zoom-indicator">&nearr; Click to view platform architecture</div>
+                </div>
+                <div class="book-thumb-strip">
+                  <img src="assets/images/cadet_os.png" alt="Dashboard View" onclick="openProjectModal('cadetos')" />
+                  <img src="assets/images/traffic_dash.png" alt="Analytics Module" onclick="openProjectModal('cadetos')" />
+                  <img src="assets/images/bionic_arm.png" alt="Operational Metrics" onclick="openProjectModal('cadetos')" />
+                </div>
+              </div>
+
+              <div class="book-narrative-pane">
+                <div class="book-chapter-meta">
+                  <span class="book-chapter-badge">Chapter 08 &bull; Operations Systems</span>
+                  <span class="book-running-folio">Folio Page 09</span>
+                </div>
+
+                <h3 class="book-project-title">CadetOS — Battalion Operations Data Platform | SQL, Power BI</h3>
+                <p class="book-project-subline">
+                  Authored comprehensive requirements (PRD) for three user groups and produced a working dashboard prototype to help a 150+ personnel unit manage its daily training and camp operations.
+                </p>
+
+                <div class="book-meta-grid">
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Scale</span>
+                    <strong class="b-meta-value">150+ Cadets &amp; Officers</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Artifact</span>
+                    <strong class="b-meta-value">Requirements PRD &bull; ERP</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Stack</span>
+                    <strong class="b-meta-value">SQL &bull; Power BI &bull; Notion</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Outcome</span>
+                    <strong class="b-meta-value">Paperless Tracking</strong>
+                  </div>
+                </div>
+
+                <div class="book-case-bullets">
+                  <h4>Core Engineering Highlights</h4>
+                  <ul>
+                    <li>Mapped operational bottlenecks in attendance, guard mount scheduling, and camp equipment logistics.</li>
+                    <li>Designed role-based access for unit senior officers, junior under officers, and individual cadets.</li>
+                    <li>Reduced manual paperwork by 70% during the 10-day CATC camp operations.</li>
+                  </ul>
+                </div>
+
+                <div class="book-action-row">
+                  <button class="btn-pill-dark" onclick="openProjectModal('cadetos')">
+                    <span>Explore Full Case Study</span> &nearr;
+                  </button>
+                  <a href="https://www.linkedin.com/posts/activity-7455334434079305728-rZ7r?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" rel="noopener" class="btn-pill-light">
+                    <span>LinkedIn Case Study</span> &nearr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PAGE 9: AFFORDABLE EMG BIONIC ARM INNOVATION -->
+          <article class="book-page" data-page-index="9" id="bookPage-9">
+            <div class="book-spread">
+              <div class="book-visual-pane">
+                <div class="book-main-img-wrap" onclick="openProjectModal('bionic')">
+                  <span class="book-tag-overlay">DELHI WINNER &bull; NATIONAL FINALIST</span>
+                  <img src="assets/images/bionic_arm.png" alt="Affordable EMG Bionic Arm" class="book-hero-img" />
+                  <div class="book-zoom-indicator">&nearr; Click to view prototype photos</div>
+                </div>
+                <div class="book-thumb-strip">
+                  <img src="assets/images/bionic_arm.jpg" alt="Prototype Testing" onclick="openProjectModal('bionic')" />
+                  <img src="assets/images/bionic_arm.png" alt="3D Printed Chassis" onclick="openProjectModal('bionic')" />
+                  <img src="assets/images/truss_gusset_1.jpg" alt="CAD Assembly" onclick="openProjectModal('bionic')" />
+                </div>
+              </div>
+
+              <div class="book-narrative-pane">
+                <div class="book-chapter-meta">
+                  <span class="book-chapter-badge">Chapter 09 &bull; Hardware Innovation</span>
+                  <span class="book-running-folio">Folio Page 10</span>
+                </div>
+
+                <h3 class="book-project-title">Winner – Affordable EMG Bionic Arm Innovation (&lt; ₹75,000 Cost)</h3>
+                <p class="book-project-subline">
+                  Won 1st Place at Delhi Idea &amp; Innovation Competition among 200+ colleges and selected as All-India Finalist in Vijayawada for an ultra-low-cost EMG myoelectric prosthesis.
+                </p>
+
+                <div class="book-meta-grid">
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Award</span>
+                    <strong class="b-meta-value">1st Place Delhi Directorate</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Cost Target</span>
+                    <strong class="b-meta-value">&lt; &#8377;75,000 (&gt;85% Savings)</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Technology</span>
+                    <strong class="b-meta-value">AutoCAD 3D &bull; Arduino &bull; EMG</strong>
+                  </div>
+                  <div class="book-meta-cell">
+                    <span class="b-meta-label">Representation</span>
+                    <strong class="b-meta-value">National Level Vijayawada</strong>
+                  </div>
+                </div>
+
+                <div class="book-case-bullets">
+                  <h4>Core Engineering Highlights</h4>
+                  <ul>
+                    <li>Engineered myoelectric sensory circuit capturing forearm muscle micro-voltages to control multi-finger servos.</li>
+                    <li>Modelled 3D printed mechanical socket and finger linkage assemblies in AutoCAD 3D.</li>
+                    <li>Evaluated against commercially available &#8377;5-10 lakh prosthetics, delivering functional grip at under &#8377;75,000.</li>
+                  </ul>
+                </div>
+
+                <div class="book-action-row">
+                  <button class="btn-pill-dark" onclick="openProjectModal('bionic')">
+                    <span>Explore Full Case Study</span> &nearr;
+                  </button>
+                  <a href="https://www.linkedin.com/posts/activity-7380255881877393408-9iJ5?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" rel="noopener" class="btn-pill-light">
+                    <span>LinkedIn Award Post</span> &nearr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
 
         </div>
+
+        <!-- Book Bottom Footer Bar -->
+        <div class="book-bottom-bar">
+          <div class="book-pagination-dots" id="bookPaginationDots">
+            <!-- 10 dots generated in JS -->
+          </div>
+          <div class="book-hint-text">
+            <span>Use arrow keys &larr; &rarr; or buttons to flip pages &bull; Press TOC to jump</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -992,8 +1586,30 @@
 
     revealTargets.forEach(el => scrollObserver.observe(el));
 
-    /* Data Store for All 8 Project Case Studies */
+    /* Data Store for All Project Case Studies */
     const projectsData = {
+      ribhus: {
+        title: "Ribhus — 2D Plans to 3D BIM Production Studio &bull; theribhus.com",
+        subtitle: "Co-founded an independent BIM modeling and digital construction studio providing Scan-to-BIM modeling, structural CAD drafting, BOQ take-offs, and high-fidelity architectural visualizations for engineering and architectural practices across Europe and India.",
+        tags: ["theribhus.com", "Scan-to-BIM", "LOD 200–350", "IFC Audits"],
+        service: "BIM Studio & CAD Outsourcing",
+        timeline: "Active Practice &bull; Jun 2026 – Present",
+        tools: "ArchiCAD, Autodesk Revit, AutoCAD, BIMcloud, IFC",
+        actionText: "Visit theribhus.com",
+        actionUrl: "https://theribhus.com",
+        images: [
+          "assets/images/3d_project2.jpg",
+          "assets/images/ribhus_logo.png",
+          "assets/images/3d_bim_portfolio.jpg",
+          "assets/images/3d_p2_2.jpg"
+        ],
+        bullets: [
+          "Co-founded Ribhus (theribhus.com) to convert legacy 2D blueprints, PDF surveys, and CAD inputs into native 3D BIM models at LOD 200–350.",
+          "Established standardized QA/QC protocols for IFC export verification, clash avoidance, and pre-handover dimension audits.",
+          "Guaranteed rapid delivery turnaround (24–48 hours for residential layouts, 3–5 days for multi-story residential blocks).",
+          "Maintains active weekly outreach pipeline across architecture and energy consulting practices in Germany and the UK."
+        ]
+      },
       truss: {
         title: "Truss Bridge Renovation Project | IS 800:2007, AutoCAD (Freelance)",
         subtitle: "Won a freelance opportunity with a consulting firm in Rajasthan and delivered 17 detailed 2D AutoCAD (DWG) sheets of gusset plate and girder bolted connections in 8 days, working from the firm's design inputs.",
@@ -1242,54 +1858,99 @@
       }
     }
 
-    /* 2-Project Slideshow Implementation */
-    let currentSlide = 0;
-    const totalSlides = 4;
-    const sliderTrack = document.getElementById('projectsSliderTrack');
-    const prevBtn = document.getElementById('prevSlideBtn');
-    const nextBtn = document.getElementById('nextSlideBtn');
-    const counterText = document.getElementById('slideCounterText');
-    const dots = document.querySelectorAll('.slider-dot');
+    /* Monograph Book Controller Implementation */
+    let currentBookPage = 0;
+    const totalBookPages = 10; // Page 0: Table of Contents, Pages 1-9: Projects
 
-    function updateSliderUI() {
-      if (!sliderTrack) return;
-      sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-      if (counterText) counterText.textContent = `Slide ${currentSlide + 1} / ${totalSlides}`;
-      
-      dots.forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === currentSlide);
+    const bookPages = document.querySelectorAll('.book-page');
+    const pageIndicator = document.getElementById('bookPageIndicator');
+    const bookPrevBtn = document.getElementById('bookPrevBtn');
+    const bookNextBtn = document.getElementById('bookNextBtn');
+    const paginationDotsContainer = document.getElementById('bookPaginationDots');
+
+    // Build pagination dots dynamically
+    if (paginationDotsContainer) {
+      paginationDotsContainer.innerHTML = '';
+      for (let i = 0; i < totalBookPages; i++) {
+        const dot = document.createElement('button');
+        dot.className = `book-dot ${i === 0 ? 'active' : ''}`;
+        dot.setAttribute('aria-label', i === 0 ? 'Table of Contents' : `Page ${i}`);
+        dot.title = i === 0 ? 'Index / Table of Contents' : `Project ${i}`;
+        dot.onclick = () => goToBookPage(i);
+        paginationDotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateBookUI() {
+      bookPages.forEach((page, idx) => {
+        if (idx === currentBookPage) {
+          page.classList.add('active');
+        } else {
+          page.classList.remove('active');
+        }
       });
 
-      if (prevBtn) prevBtn.disabled = currentSlide === 0;
-      if (nextBtn) nextBtn.disabled = currentSlide === totalSlides - 1;
+      // Update Page Indicator label
+      if (pageIndicator) {
+        if (currentBookPage === 0) {
+          pageIndicator.textContent = 'Index / Contents';
+        } else {
+          pageIndicator.textContent = `Page ${String(currentBookPage).padStart(2, '0')} / ${String(totalBookPages - 1).padStart(2, '0')}`;
+        }
+      }
+
+      // Update Prev / Next Buttons
+      if (bookPrevBtn) bookPrevBtn.disabled = currentBookPage === 0;
+      if (bookNextBtn) bookNextBtn.disabled = currentBookPage === totalBookPages - 1;
+
+      // Update Dots
+      const dots = document.querySelectorAll('.book-dot');
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentBookPage);
+      });
     }
 
-    function nextProjectSlide() {
-      if (currentSlide < totalSlides - 1) {
-        currentSlide++;
-        updateSliderUI();
+    function nextBookPage() {
+      if (currentBookPage < totalBookPages - 1) {
+        currentBookPage++;
+        updateBookUI();
       }
     }
 
-    function prevProjectSlide() {
-      if (currentSlide > 0) {
-        currentSlide--;
-        updateSliderUI();
+    function prevBookPage() {
+      if (currentBookPage > 0) {
+        currentBookPage--;
+        updateBookUI();
       }
     }
 
-    function goToProjectSlide(index) {
-      currentSlide = index;
-      updateSliderUI();
+    function goToBookPage(index) {
+      if (index >= 0 && index < totalBookPages) {
+        currentBookPage = index;
+        updateBookUI();
+        // Optional smooth scroll to book if user is far down
+        const workSec = document.getElementById('work');
+        if (workSec) {
+          const rect = workSec.getBoundingClientRect();
+          if (rect.top < -100 || rect.top > window.innerHeight) {
+            workSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }
     }
 
-    updateSliderUI();
+    function toggleBookToc() {
+      goToBookPage(0);
+    }
 
-    /* Keyboard navigation for slideshow */
+    // Initialize Book
+    updateBookUI();
+
+    /* Keyboard navigation for book */
     window.addEventListener('keydown', (e) => {
       if (document.getElementById('projectModal').classList.contains('open')) return;
-      if (e.key === 'ArrowRight') nextProjectSlide();
-      if (e.key === 'ArrowLeft') prevProjectSlide();
+      if (e.key === 'ArrowRight') nextBookPage();
+      if (e.key === 'ArrowLeft') prevBookPage();
     });
 
     /* Experience Details Drawer */
